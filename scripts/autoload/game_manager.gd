@@ -142,11 +142,16 @@ func register_boss_defeated() -> void:
 
 
 func is_tester_hud_enabled() -> bool:
-	return OS.is_debug_build()
+	# Re-enable for local QA: `return OS.is_debug_build()`
+	# (DEV row: "No sleep dmg" / "Strong hits" — off while validating real difficulty for deploy.)
+	# return OS.is_debug_build()
+	return false
 
 
 func is_tester_invulnerable() -> bool:
-	return OS.is_debug_build() and tester_invulnerable
+	# Re-enable for local QA: `return OS.is_debug_build() and tester_invulnerable`
+	# return OS.is_debug_build() and tester_invulnerable
+	return false
 
 
 func get_tester_outgoing_damage_multiplier() -> float:
