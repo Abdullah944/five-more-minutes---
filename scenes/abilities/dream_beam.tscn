@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ivsq8vo047kq"]
+
+[ext_resource type="Script" uid="uid://phmnw4xpg0cd" path="res://scenes/abilities/dream_beam.gd" id="1_beam"]
+
+[node name="DreamBeam" type="Node2D" unique_id=284197385]
+script = ExtResource("1_beam")

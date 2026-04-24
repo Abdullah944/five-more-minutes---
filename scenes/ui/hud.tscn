@@ -1,0 +1,245 @@
+[gd_scene format=3 uid="uid://ii5lvy6e0mrm"]
+
+[ext_resource type="Script" uid="uid://cilg75dbfkw7d" path="res://scenes/ui/hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" uid="uid://c7a3os66ynw3e" path="res://art/ui/hud_sleep_moon.png" id="2_moon"]
+[ext_resource type="Texture2D" uid="uid://n3vswcam5sce" path="res://art/ui/icon_hud_pause.png" id="3_pause"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_meter_bg"]
+bg_color = Color(0.95, 0.95, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_meter_fill"]
+bg_color = Color(0.29, 0.31, 0.56, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wave_panel"]
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
+bg_color = Color(0.2, 0.22, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp_bg"]
+bg_color = Color(0.94902, 0.95294, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp_fill"]
+bg_color = Color(0.95294, 0.78824, 0.41176, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="HUD" type="CanvasLayer" unique_id=1719127966]
+layer = 10
+script = ExtResource("1_hud")
+
+[node name="SafeArea" type="MarginContainer" parent="." unique_id=1329038965]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 20
+
+[node name="Layout" type="VBoxContainer" parent="SafeArea" unique_id=1390886327]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopSection" type="VBoxContainer" parent="SafeArea/Layout" unique_id=681545580]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="TopRow" type="HBoxContainer" parent="SafeArea/Layout/TopSection" unique_id=1067805550]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="LeftHUD" type="VBoxContainer" parent="SafeArea/Layout/TopSection/TopRow" unique_id=210001001]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 6
+
+[node name="SleepMeterBar" type="ProgressBar" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD" unique_id=1545120868]
+custom_minimum_size = Vector2(220, 34)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_meter_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_meter_fill")
+show_percentage = false
+
+[node name="Fill" type="ColorRect" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD/SleepMeterBar" unique_id=120566033]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.3, 0.5, 0.9, 0)
+
+[node name="MoonIcon" type="TextureRect" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD/SleepMeterBar" unique_id=210001002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_moon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WavePanel" type="PanelContainer" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD" unique_id=210001003]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wave_panel")
+
+[node name="WaveBadge" type="Label" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD/WavePanel" unique_id=274009000]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.94902, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Wave 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XPStrip" type="HBoxContainer" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD" unique_id=210001006]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatsCorner" type="Label" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD/XPStrip" unique_id=1728179436]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Kills: 0"
+
+[node name="XPBar" type="ProgressBar" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD/XPStrip" unique_id=551134814]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_xp_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xp_fill")
+show_percentage = false
+
+[node name="LevelLabel" type="Label" parent="SafeArea/Layout/TopSection/TopRow/LeftHUD/XPStrip/XPBar" unique_id=1370586177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "Lv 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopSpacer" type="Control" parent="SafeArea/Layout/TopSection/TopRow" unique_id=210001004]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="PauseButton" type="Button" parent="SafeArea/Layout/TopSection/TopRow" unique_id=723350534]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/icon_max_width = 84
+icon = ExtResource("3_pause")
+flat = true
+expand_icon = true
+
+[node name="InfoRow" type="HBoxContainer" parent="SafeArea/Layout/TopSection" unique_id=736183023]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="InfoSpacer" type="Control" parent="SafeArea/Layout/TopSection/InfoRow" unique_id=210001005]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="TimerLabel" type="Label" parent="SafeArea/Layout/TopSection/InfoRow" unique_id=1242643108]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 23
+text = "0:00"
+horizontal_alignment = 1
+
+[node name="TesterRow" type="HBoxContainer" parent="SafeArea/Layout"]
+visible = false
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 10
+
+[node name="TesterLabel" type="Label" parent="SafeArea/Layout/TesterRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.85, 0.55, 1)
+theme_override_font_sizes/font_size = 14
+text = "DEV"
+
+[node name="InvulnerableCheck" type="CheckBox" parent="SafeArea/Layout/TesterRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "No sleep dmg"
+
+[node name="MegaDamageCheck" type="CheckBox" parent="SafeArea/Layout/TesterRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Strong hits"
+
+[node name="MiddleSpacer" type="Control" parent="SafeArea/Layout" unique_id=1000378393]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="AbilityContainer" type="VBoxContainer" parent="SafeArea/Layout/MiddleSpacer" unique_id=2036421356]
+layout_mode = 1
+offset_right = 60.0
+offset_bottom = 400.0
+theme_override_constants/separation = 8
+
+[node name="SnoozeButton" type="Button" parent="SafeArea/Layout/MiddleSpacer" unique_id=433098489]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "SNOOZE"

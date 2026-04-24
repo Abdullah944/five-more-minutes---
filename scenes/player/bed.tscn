@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://c6qqontrs38fl"]
+
+[ext_resource type="Script" uid="uid://da4ul1p81e8l5" path="res://scenes/player/bed.gd" id="1_bed"]
+[ext_resource type="Script" uid="uid://nfwsavxg6u1l" path="res://scripts/components/pickup_magnet.gd" id="2_magnet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurtbox"]
+size = Vector2(52, 68)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_magnet"]
+radius = 80.0
+
+[sub_resource type="Animation" id="Animation_intro_full"]
+resource_name = "intro_full"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HeroSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -24), Vector2(0, -24), Vector2(0, -12), Vector2(0, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeroSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.2, 1.6, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.15, -0.15, 0.1, -0.05, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ZZZLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HeroSprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.9, 0.8, 1), Color(1, 0.9, 0.8, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_intro_quick"]
+resource_name = "intro_quick"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HeroSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -18), Vector2(0, -14), Vector2(0, -10), Vector2(0, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZZZLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HeroSprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.05, 0.03, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
+_data = {
+&"intro_full": SubResource("Animation_intro_full"),
+&"intro_quick": SubResource("Animation_intro_quick")
+}
+
+[node name="Bed" type="CharacterBody2D" unique_id=93728333]
+collision_mask = 0
+script = ExtResource("1_bed")
+
+[node name="BedSprite" type="Sprite2D" parent="." unique_id=1225027406]
+
+[node name="HeroSprite" type="Sprite2D" parent="." unique_id=1283263668]
+z_index = 1
+position = Vector2(0, -8)
+
+[node name="ZZZLabel" type="Label" parent="." unique_id=272820715]
+z_index = 2
+offset_left = -30.0
+offset_top = -65.0
+offset_right = 30.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(0.6, 0.7, 1, 0.8)
+theme_override_font_sizes/font_size = 18
+text = "Z z Z"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=565331968]
+shape = SubResource("RectangleShape2D_body")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=864756776]
+collision_layer = 2
+collision_mask = 4
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1834594537]
+shape = SubResource("RectangleShape2D_hurtbox")
+
+[node name="PickupMagnet" type="Area2D" parent="." unique_id=221772452]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("2_magnet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupMagnet" unique_id=1883539397]
+shape = SubResource("CircleShape2D_magnet")
+
+[node name="AbilityMount" type="Node2D" parent="." unique_id=1340514069]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1050409768]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=394637463]
+libraries/ = SubResource("AnimationLibrary_main")

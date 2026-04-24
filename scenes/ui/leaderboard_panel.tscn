@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b4r8epbldw0cb"]
+
+[ext_resource type="Script" path="res://scenes/ui/leaderboard_panel.gd" id="1_lb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 20.0
+content_margin_top = 24.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.0823529, 0.0901961, 0.168627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back_btn"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.2, 0.219608, 0.403922, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="LeaderboardPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lb")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Layout" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="TopBar" type="HBoxContainer" parent="Panel/Layout"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Panel/Layout/TopBar"]
+custom_minimum_size = Vector2(100, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_back_btn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_back_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_back_btn")
+text = "Back"
+
+[node name="Spacer" type="Control" parent="Panel/Layout/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="Panel/Layout/TopBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6549, 0.66275, 0.78039, 1)
+theme_override_font_sizes/font_size = 26
+text = "Dream Hall"
+
+[node name="Subtitle" type="Label" parent="Panel/Layout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.58, 0.68, 1)
+theme_override_font_sizes/font_size = 18
+text = "Loading..."
+autowrap_mode = 3
+
+[node name="Scroll" type="ScrollContainer" parent="Panel/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ItemList" type="VBoxContainer" parent="Panel/Layout/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12

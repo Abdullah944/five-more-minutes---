@@ -1,0 +1,67 @@
+# Five More Minutes! — Cursor Rules
+
+## Project Identity
+
+- **Game:** Five More Minutes! ⏰💤 — cozy-comedy roguelike survivor
+- **Engine:** Godot 4.6 (Mobile Renderer)
+- **Platform:** Android / iOS, portrait mode, one-thumb play
+- **Language:** GDScript only. No C#, no GDExtension.
+
+## Golden Rules
+
+1. **Never touch existing files unless explicitly asked.** If a task doesn't name a file, create new files or add new nodes instead.
+2. **Always state what you changed.** After any edit, list every file created, modified, or deleted.
+3. **Ask before anything unclear.** If the GDD is ambiguous or a request conflicts with existing code, ask before acting.
+4. **Secrets stay in `.env`.** Never hardcode API keys, tokens, or credentials in scripts, scenes, project.godot, or export presets. Read them at runtime via `FileAccess` from `res://.env`.
+5. **Never commit `.env`.** It is git-ignored. Use `.env.example` for placeholder reference.
+
+## Code Style (match existing autoloads)
+
+- `extends Node` at top of autoloads, `## Doc comment` on line 2
+- Type hints on all vars, params, and return types
+- Tabs for indentation (Godot default)
+- Section headers: `# --- Section Name ---`
+- Public API before internal `_`-prefixed methods
+- Constants as `const UPPER_SNAKE`, variables as `lower_snake`
+- Signals declared at the top of the file, after the doc comment
+- Enums inside the class that owns them
+
+## Architecture
+
+- **Autoload singletons** for global systems (GameManager, SleepMeter, etc.)
+- **Component pattern** for reusable behaviors (HealthComponent, HitboxComponent, etc.)
+- **Resource (.tres) files** for data definitions (enemies, upgrades, abilities, beds)
+- **Object pooling** for projectiles and particles (see `scripts/systems/object_pool.gd`)
+- Scene inheritance for enemy variants (all inherit `base_enemy.tscn`)
+
+## Asset Pipeline
+
+- **SpriteCook AI** for sprite generation and animation via MCP tools
+- Store `asset_id` values in `spritecook-assets.json` manifest at project root
+- Art goes in `art/sprites/`, `art/tilesets/`, `art/ui/`
+- Audio goes in `audio/music/`, `audio/sfx/`
+- Pixel art style by default, transparent backgrounds, `smart_crop_mode="tightest"`
+
+## Mobile Constraints
+
+- Portrait locked, 720x1280 base resolution, stretch mode `canvas_items`, aspect `expand`
+- Touch input only: floating joystick, no keyboard/mouse assumptions
+- Performance budget: 60fps target, 30fps battery-saver mode
+- `MultiMeshInstance2D` for mass enemy rendering, object pools for projectiles
+- Max 50 particles per `GPUParticles2D` emitter
+
+## Telegram Bot (Dev Tool)
+
+- `TelegramBot.gd` autoload, debug builds only
+- Reads credentials from `.env` via `FileAccess`
+- Only responds to the authorised `TELEGRAM_CHAT_ID`
+- Commands: /status, /spawn, /pause, /screenshot, /build
+
+## What NOT to Do
+
+- Don't add C# or any non-GDScript language
+- Don't modify export presets to include `.env` or credentials
+- Don't use `OS.execute()` in shipped builds
+- Don't add dependencies beyond what Godot provides natively
+- Don't create landscape-mode UI
+- Don't add emoji to code comments unless the user requests it

@@ -1,0 +1,425 @@
+[gd_scene format=3 uid="uid://71qjqsr85un7"]
+
+[ext_resource type="Script" uid="uid://menu6phd3vl" path="res://scenes/main/bedroom_hub.gd" id="1_hub"]
+[ext_resource type="PackedScene" path="res://scenes/ui/store_screen.tscn" id="2_store"]
+[ext_resource type="PackedScene" path="res://scenes/ui/missions_panel.tscn" id="3_missions"]
+[ext_resource type="PackedScene" path="res://scenes/ui/settings_panel.tscn" id="4_settings"]
+[ext_resource type="PackedScene" path="res://scenes/ui/leaderboard_panel.tscn" id="5_leaderboard"]
+[ext_resource type="Texture2D" uid="uid://d2df1hk6b4rbf" path="res://art/sprites/hub/room_base.png" id="5_room_base"]
+[ext_resource type="Texture2D" uid="uid://dpnqv2u3ubd3r" path="res://art/sprites/hub/mattress.png" id="6_mattress"]
+[ext_resource type="Texture2D" uid="uid://1ae048nqby2u" path="res://art/sprites/hub/night_lamp.png" id="9_night_lamp"]
+[ext_resource type="Texture2D" uid="uid://dp0m2db535gn6" path="res://art/sprites/hub/alarm_clock.png" id="10_alarm_clock"]
+[ext_resource type="Texture2D" uid="uid://ol5jm8bm0twk" path="res://art/sprites/hub/white_noise.png" id="11_white_noise"]
+[ext_resource type="Texture2D" uid="uid://ds8gdncbefpit" path="res://art/sprites/hub/slippers.png" id="12_slippers"]
+[ext_resource type="Texture2D" uid="uid://d36njkwkx3tec" path="res://art/sprites/hub/dream_journal.png" id="13_dream_journal"]
+[ext_resource type="Texture2D" path="res://art/ui/icon_gear.png" id="14_gear"]
+[ext_resource type="Texture2D" path="res://art/ui/icon_shard.png" id="15_shard"]
+[ext_resource type="Texture2D" uid="uid://ct8ed07qponfv" path="res://art/ui/icon_bell.png" id="16_bell"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bell_badge"]
+bg_color = Color(0.9, 0.28, 0.24, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stats_strip"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.188235, 0.2, 0.282353, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 4
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_store"]
+content_margin_left = 48.0
+content_margin_top = 22.0
+content_margin_right = 48.0
+content_margin_bottom = 22.0
+bg_color = Color(0.22, 0.22, 0.36, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play"]
+content_margin_left = 56.0
+content_margin_top = 24.0
+content_margin_right = 56.0
+content_margin_bottom = 24.0
+bg_color = Color(0.3, 0.35, 0.7, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="BedroomHub" type="Control" unique_id=1368501522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hub")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1243220965]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.09, 0.16, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=1058218722]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="StatsStrip" type="PanelContainer" parent="TopBar" unique_id=2068808718]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_stats_strip")
+
+[node name="StatsRow" type="HBoxContainer" parent="TopBar/StatsStrip" unique_id=2068808719]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RunsBlock" type="VBoxContainer" parent="TopBar/StatsStrip/StatsRow" unique_id=2068808720]
+layout_mode = 2
+theme_override_constants/separation = 2
+size_flags_vertical = 4
+
+[node name="RunsCaption" type="Label" parent="TopBar/StatsStrip/StatsRow/RunsBlock" unique_id=2068808721]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6549, 0.66275, 0.78039, 1)
+theme_override_font_sizes/font_size = 15
+text = "RUNS"
+horizontal_alignment = 1
+
+[node name="RunsValue" type="Label" parent="TopBar/StatsStrip/StatsRow/RunsBlock" unique_id=2068808722]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.95294, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="StatSep" type="VSeparator" parent="TopBar/StatsStrip/StatsRow" unique_id=2068808723]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BestBlock" type="VBoxContainer" parent="TopBar/StatsStrip/StatsRow" unique_id=2068808724]
+layout_mode = 2
+theme_override_constants/separation = 2
+size_flags_vertical = 4
+
+[node name="BestCaption" type="Label" parent="TopBar/StatsStrip/StatsRow/BestBlock" unique_id=2068808725]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6549, 0.66275, 0.78039, 1)
+theme_override_font_sizes/font_size = 15
+text = "BEST RUN"
+horizontal_alignment = 1
+
+[node name="BestValue" type="Label" parent="TopBar/StatsStrip/StatsRow/BestBlock" unique_id=2068808726]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95294, 0.78824, 0.41176, 1)
+theme_override_font_sizes/font_size = 24
+text = "0:00"
+horizontal_alignment = 1
+
+[node name="StatSep2" type="VSeparator" parent="TopBar/StatsStrip/StatsRow" unique_id=2068808727]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="RankBlock" type="VBoxContainer" parent="TopBar/StatsStrip/StatsRow" unique_id=2068808728]
+layout_mode = 2
+theme_override_constants/separation = 2
+size_flags_vertical = 4
+
+[node name="RankCaption" type="Label" parent="TopBar/StatsStrip/StatsRow/RankBlock" unique_id=2068808729]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6549, 0.66275, 0.78039, 1)
+theme_override_font_sizes/font_size = 15
+text = "RANK"
+horizontal_alignment = 1
+
+[node name="RankValue" type="Label" parent="TopBar/StatsStrip/StatsRow/RankBlock" unique_id=2068808730]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.63, 0.97, 1)
+theme_override_font_sizes/font_size = 24
+text = "#1"
+horizontal_alignment = 1
+
+[node name="TopBarSpacer" type="Control" parent="TopBar" unique_id=2068808731]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShardIcon" type="TextureRect" parent="TopBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(44, 44)
+texture = ExtResource("15_shard")
+expand_mode = 1
+stretch_mode = 5
+size_flags_vertical = 4
+
+[node name="ShardsLabel" type="Label" parent="TopBar" unique_id=279112626]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95294, 0.78824, 0.41176, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+vertical_alignment = 1
+
+[node name="BellButton" type="TextureButton" parent="TopBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(64, 64)
+texture_normal = ExtResource("16_bell")
+ignore_texture_size = true
+stretch_mode = 5
+size_flags_vertical = 4
+
+[node name="BellBadge" type="Panel" parent="TopBar/BellButton"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -18.0
+offset_top = 6.0
+offset_right = -4.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+visible = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_bell_badge")
+
+[node name="SettingsButton" type="TextureButton" parent="TopBar" unique_id=1234453647]
+layout_mode = 2
+custom_minimum_size = Vector2(52, 52)
+texture_normal = ExtResource("14_gear")
+ignore_texture_size = true
+stretch_mode = 5
+size_flags_vertical = 4
+
+[node name="RoomTitle" type="Label" parent="." unique_id=1570638865]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 95.0
+offset_right = -20.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 1.0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Your Bedroom"
+horizontal_alignment = 1
+
+[node name="RoomViewport" type="Control" parent="." unique_id=606312224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 140.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoomBase" type="TextureRect" parent="RoomViewport" unique_id=1468950049]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_room_base")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FurnitureMattress" type="Control" parent="RoomViewport" unique_id=1825894588]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.6
+
+[node name="FurnitureVisual" type="TextureRect" parent="RoomViewport/FurnitureMattress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_mattress")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FurnitureNightLamp" type="Control" parent="RoomViewport" unique_id=37453097]
+layout_mode = 1
+anchor_left = 0.8
+anchor_top = 0.25
+anchor_right = 0.95
+anchor_bottom = 0.45
+
+[node name="FurnitureVisual" type="TextureRect" parent="RoomViewport/FurnitureNightLamp"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_night_lamp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FurnitureAlarmClock" type="Control" parent="RoomViewport" unique_id=634822411]
+layout_mode = 1
+anchor_left = 0.05
+anchor_top = 0.28
+anchor_right = 0.2
+anchor_bottom = 0.45
+
+[node name="FurnitureVisual" type="TextureRect" parent="RoomViewport/FurnitureAlarmClock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_alarm_clock")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FurnitureWhiteNoise" type="Control" parent="RoomViewport" unique_id=1536883031]
+layout_mode = 1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.2
+anchor_bottom = 0.65
+
+[node name="FurnitureVisual" type="TextureRect" parent="RoomViewport/FurnitureWhiteNoise"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_white_noise")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FurnitureSlippers" type="Control" parent="RoomViewport" unique_id=2072903562]
+layout_mode = 1
+anchor_left = 0.25
+anchor_top = 0.7
+anchor_right = 0.45
+anchor_bottom = 0.85
+
+[node name="FurnitureVisual" type="TextureRect" parent="RoomViewport/FurnitureSlippers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_slippers")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FurnitureDreamJournal" type="Control" parent="RoomViewport" unique_id=1875126975]
+layout_mode = 1
+anchor_left = 0.58
+anchor_top = 0.68
+anchor_right = 0.78
+anchor_bottom = 0.85
+
+[node name="FurnitureVisual" type="TextureRect" parent="RoomViewport/FurnitureDreamJournal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_dream_journal")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BottomBar" type="HBoxContainer" parent="." unique_id=1222951249]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -125.0
+offset_right = -30.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="MissionsButton" type="Button" parent="BottomBar" unique_id=242012351]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_store")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_store")
+theme_override_styles/hover = SubResource("StyleBoxFlat_store")
+text = "Missions"
+
+[node name="HallButton" type="Button" parent="BottomBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_store")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_store")
+theme_override_styles/hover = SubResource("StyleBoxFlat_store")
+text = "Dream Hall"
+
+[node name="StoreButton" type="Button" parent="BottomBar" unique_id=424852527]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_store")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_store")
+theme_override_styles/hover = SubResource("StyleBoxFlat_store")
+text = "Store"
+
+[node name="PlayButton" type="Button" parent="BottomBar" unique_id=10165419]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_play")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_play")
+theme_override_styles/hover = SubResource("StyleBoxFlat_play")
+text = "Sleep!"
+
+[node name="StoreScreen" parent="." unique_id=753721639 instance=ExtResource("2_store")]
+visible = false
+
+[node name="MissionsPanel" parent="." unique_id=34441724 instance=ExtResource("3_missions")]
+visible = false
+
+[node name="SettingsPanel" parent="." unique_id=1781664859 instance=ExtResource("4_settings")]
+visible = false
+
+[node name="LeaderboardPanel" parent="." instance=ExtResource("5_leaderboard")]
+visible = false

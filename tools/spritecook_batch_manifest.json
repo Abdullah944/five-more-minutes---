@@ -1,0 +1,136 @@
+{
+	"reference_asset_id": "3a5b159b-3536-40a6-965e-2c61ddeeafd1",
+	"theme": "cozy comedy roguelike survivor, dreamy bedroom, soft moonlit purples teals and warm pastels",
+	"style": "cute 16-bit SNES-style pixel art, clean outlines, high readability on mobile",
+	"model": "gemini-3.1-flash-image-preview",
+	"jobs": [
+		{
+			"label": "enemy_mosquito",
+			"file": "art/sprites/enemy_mosquito.png",
+			"prompt": "single enemy sprite, oversized sleepy cartoon mosquito with tiny Zs, facing slightly down, top-down casual mobile game, full body, transparent bg",
+			"width": 48,
+			"height": 48
+		},
+		{
+			"label": "enemy_neighbor",
+			"file": "art/sprites/enemy_neighbor.png",
+			"prompt": "single enemy sprite, grumpy neighbor in robe and slippers holding a slipper, funny not scary, top-down game, full body, transparent bg",
+			"width": 56,
+			"height": 56
+		},
+		{
+			"label": "enemy_delivery_drone",
+			"file": "art/sprites/enemy_delivery_drone.png",
+			"prompt": "single enemy sprite, cute delivery drone carrying a noisy parcel with alarm sticker, propellers, top-down view, transparent bg",
+			"width": 52,
+			"height": 48
+		},
+		{
+			"label": "boss_espresso_golem",
+			"file": "art/sprites/boss_espresso_golem.png",
+			"prompt": "boss enemy sprite, espresso golem made of coffee cups and steam, chunky silhouette, facing player, top-down casual game, transparent bg",
+			"width": 96,
+			"height": 96
+		},
+		{
+			"label": "boss_dj_rooster",
+			"file": "art/sprites/boss_dj_rooster.png",
+			"prompt": "boss enemy sprite, cartoon rooster DJ with tiny headphones and boombox tail, loud party vibes but cute, top-down game, transparent bg",
+			"width": 96,
+			"height": 96
+		},
+		{
+			"label": "boss_thunder_cloud",
+			"file": "art/sprites/boss_thunder_cloud.png",
+			"prompt": "boss enemy sprite, grumpy thunder cloud character with sleepy eyes and small lightning bolts, top-down game, transparent bg",
+			"width": 96,
+			"height": 80
+		},
+		{
+			"label": "bed_cloud",
+			"file": "art/sprites/beds/bed_cloud.png",
+			"prompt": "single bed sprite top-down oblique view, fluffy cloud mattress bed with tiny stars, cute, transparent bg",
+			"width": 128,
+			"height": 128
+		},
+		{
+			"label": "bed_race_car",
+			"file": "art/sprites/beds/bed_race_car.png",
+			"prompt": "single bed sprite top-down oblique view, red race car toddler bed with wheels stickers, cute pixel, transparent bg",
+			"width": 128,
+			"height": 128
+		},
+		{
+			"label": "bed_bunk",
+			"file": "art/sprites/beds/bed_bunk.png",
+			"prompt": "single bed sprite top-down oblique view, wooden bunk bed cartoon, cozy, transparent bg",
+			"width": 128,
+			"height": 128
+		},
+		{
+			"label": "bed_hammock",
+			"file": "art/sprites/beds/bed_hammock.png",
+			"prompt": "single bed sprite top-down oblique view, cozy hammock between two small posts, tropical pastel, transparent bg",
+			"width": 128,
+			"height": 96
+		},
+		{
+			"label": "bed_waterbed",
+			"file": "art/sprites/beds/bed_waterbed.png",
+			"prompt": "single bed sprite top-down oblique view, waterbed with gentle wave pattern on mattress, cute, transparent bg",
+			"width": 128,
+			"height": 112
+		},
+		{
+			"label": "bed_canopy",
+			"file": "art/sprites/beds/bed_canopy.png",
+			"prompt": "single bed sprite top-down oblique view, fancy canopy bed curtains tied back, royal but cozy, transparent bg",
+			"width": 128,
+			"height": 128
+		},
+		{
+			"label": "bed_futon",
+			"file": "art/sprites/beds/bed_futon.png",
+			"prompt": "single bed sprite top-down oblique view, low Japanese futon with folded blanket, minimal cute, transparent bg",
+			"width": 128,
+			"height": 96
+		},
+		{
+			"label": "dream_bg_underwater",
+			"file": "art/backgrounds/dream_underwater.png",
+			"prompt": "full vertical mobile game background, underwater bedroom dream, coral nightlight bubbles jellyfish lamp, cozy not scary, pastel, parallax-friendly top half lighter",
+			"width": 360,
+			"height": 512,
+			"mode": "texture",
+			"pixel": true
+		},
+		{
+			"label": "ui_upgrade_card_frame_attack",
+			"file": "art/ui/upgrade_card_frame_attack.png",
+			"prompt": "flat UI panel frame only, nine-slice friendly border for upgrade card, soft red rose moon Sleep Strength theme, empty center, rounded corners, pixel UI for mobile",
+			"width": 256,
+			"height": 140,
+			"mode": "ui",
+			"pixel": true
+		},
+		{
+			"label": "ui_upgrade_card_frame_defense",
+			"file": "art/ui/upgrade_card_frame_defense.png",
+			"prompt": "square empty UI card frame border on all four sides same thickness, Calmness cool blue theme, large transparent inner area for nine-slice, portrait mobile game, pixel UI",
+			"width": 256,
+			"height": 256,
+			"mode": "ui",
+			"pixel": true,
+			"smart_crop": false
+		},
+		{
+			"label": "ui_upgrade_card_frame_comfort",
+			"file": "art/ui/upgrade_card_frame_comfort.png",
+			"prompt": "flat UI panel frame only, nine-slice friendly border for upgrade card, mint green Comfort theme, empty center, rounded corners, pixel UI for mobile",
+			"width": 256,
+			"height": 140,
+			"mode": "ui",
+			"pixel": true
+		}
+	]
+}

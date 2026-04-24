@@ -1,0 +1,317 @@
+[
+  {
+	"asset_id": "3a5b159b-3536-40a6-965e-2c61ddeeafd1",
+	"sha12": "7445985ea398",
+	"label": "bed_standard",
+	"file": "art/sprites/bed_standard.png",
+	"size": "128x128"
+  },
+  {
+	"asset_id": "8e9b79e8-b681-4f8e-8d4a-1f33fdca12e8",
+	"sha12": "68d9f0c1e4f5",
+	"label": "enemy_zombie",
+	"file": "art/sprites/enemy_zombie.png",
+	"size": "64x64"
+  },
+  {
+	"asset_id": "0911c39f-aa71-431b-861a-3ba6dc5f5a7d",
+	"sha12": "3a5e084f5e46",
+	"label": "enemy_alarm_clock",
+	"file": "art/sprites/enemy_alarm_clock.png",
+	"size": "48x48"
+  },
+  {
+	"asset_id": "6f1ce6fd-4e10-4502-b32c-652d825653fb",
+	"sha12": "ed2d75b858a2",
+	"label": "enemy_barking_pup",
+	"file": "art/sprites/enemy_barking_pup.png",
+	"size": "48x48"
+  },
+  {
+	"asset_id": "35eb1803-6258-4eb9-9294-f4a4b37c6286",
+	"sha12": "660a7abf7830",
+	"label": "pickup_sleep_energy",
+	"file": "art/sprites/pickup_sleep_energy.png",
+	"size": "32x32"
+  },
+  {
+	"asset_id": "504efec9-5306-4daf-97e6-911dae91a284",
+	"sha12": "125570a79f65",
+	"label": "pickup_warm_milk",
+	"file": "art/sprites/pickup_warm_milk.png",
+	"size": "32x32"
+  },
+  {
+	"asset_id": "d6e3d44c-1891-478d-88e9-df713aaf9b14",
+	"sha12": "70c3d3ba9f5b",
+	"label": "hub_room_base",
+	"file": "art/sprites/hub/room_base.png",
+	"size": "512x512"
+  },
+  {
+	"asset_id": "24c407ca-247f-4eeb-8ac7-90f5591af672",
+	"sha12": "32effb338ed3",
+	"label": "hub_mattress",
+	"file": "art/sprites/hub/mattress.png",
+	"size": "128x96"
+  },
+  {
+	"asset_id": "81cbe0dc-1934-4e24-9249-11f20c85f991",
+	"sha12": "8d35834e4cf6",
+	"label": "hub_pillow",
+	"file": "art/sprites/hub/pillow.png",
+	"size": "64x64"
+  },
+  {
+	"asset_id": "9ba9687f-b37a-4bb0-a344-cd77da35c42a",
+	"sha12": "cb642dad78f9",
+	"label": "hub_blanket",
+	"file": "art/sprites/hub/blanket.png",
+	"size": "96x64"
+  },
+  {
+	"asset_id": "110ee888-ff23-4eac-9c42-68f7643469f7",
+	"sha12": "72ff4ffe65b0",
+	"label": "hub_night_lamp",
+	"file": "art/sprites/hub/night_lamp.png",
+	"size": "64x96"
+  },
+  {
+	"asset_id": "9e5b33b4-c3f4-421a-a165-803dcd4c9ec4",
+	"sha12": "ee107dacb7b9",
+	"label": "hub_alarm_clock",
+	"file": "art/sprites/hub/alarm_clock.png",
+	"size": "64x64"
+  },
+  {
+	"asset_id": "36cbed89-af57-48ac-91dd-b973c95031bb",
+	"sha12": "0e8d4824d0b7",
+	"label": "hub_white_noise",
+	"file": "art/sprites/hub/white_noise.png",
+	"size": "64x64"
+  },
+  {
+	"asset_id": "ae1a77fe-1961-4a6e-8b0e-2c3d4e2b7284",
+	"sha12": "d458b21ffa37",
+	"label": "hub_slippers",
+	"file": "art/sprites/hub/slippers.png",
+	"size": "64x48"
+  },
+  {
+	"asset_id": "09ed8dc7-7595-416c-bfd3-f1c33514157a",
+	"sha12": "9b82b40429d9",
+	"label": "hub_dream_journal",
+	"file": "art/sprites/hub/dream_journal.png",
+	"size": "64x80"
+  },
+  {
+	"asset_id": "1de6a151-d52f-44e0-b1ef-afdb28d8f426",
+	"sha12": "261fa52b1d13",
+	"label": "hub_nightstand",
+	"file": "art/sprites/hub/nightstand.png",
+	"size": "96x80"
+  },
+  {
+	"asset_id": "6e2c6662-2268-4103-9406-9fccef3e5f65",
+	"label": "pillow_projectile",
+	"file": "art/sprites/effects/pillow_projectile.png",
+	"size": "32x24"
+  },
+  {
+	"asset_id": "7e631152-9e4f-40c8-81c6-dcbf391d7362",
+	"label": "snore_wave",
+	"file": "art/sprites/effects/snore_wave.png",
+	"size": "64x64"
+  },
+  {
+	"asset_id": "cbfa2b1d-7e6c-43bc-b84e-5ad2c4ddfea6",
+	"label": "dream_beam",
+	"file": "art/sprites/effects/dream_beam.png",
+	"size": "48x16"
+  },
+  {
+	"asset_id": "54d085e5-492b-46ae-aeec-11bb277c481b",
+	"label": "dream_bg_forest",
+	"file": "art/backgrounds/dream_forest.png",
+	"size": "360x512"
+  },
+  {
+	"asset_id": "fb570eec-0f8f-4d46-81ac-b02ec93f46c3",
+	"label": "dream_bg_clouds",
+	"file": "art/backgrounds/dream_clouds.png",
+	"size": "360x512"
+  },
+  {
+	"asset_id": "da1df736-e9c7-42b7-959e-39e8fcb9cecf",
+	"label": "dream_bg_nightmare",
+	"file": "art/backgrounds/dream_nightmare.png",
+	"size": "360x512"
+  },
+  {
+	"asset_id": "32ff525f-2e3c-465e-baea-e5da85fe6223",
+	"label": "dream_bg_candy",
+	"file": "art/backgrounds/dream_candy.png",
+	"size": "360x512"
+  },
+  {
+	"asset_id": "102c721e-03b9-4f2f-abd0-9040dcce2673",
+	"label": "dream_bg_space",
+	"file": "art/backgrounds/dream_space.png",
+	"size": "360x512"
+  },
+  {
+	"asset_id": "b93063e6-e6e3-4a69-9d37-d879d7ccc931",
+	"label": "game_icon",
+	"file": "art/icons/icon_512.png",
+	"size": "512x512"
+  },
+  {
+	"asset_id": "dc1b0c44-9028-4e85-9005-7a9ad72f4c53",
+	"label": "enemy_ghost",
+	"file": "art/sprites/enemy_ghost.png",
+	"size": "64x64"
+  },
+  {
+	"asset_id": "97f8d927-e1ac-433e-bcc3-742f31d546c8",
+	"label": "icon_shard",
+	"file": "art/ui/icon_shard.png",
+	"size": "32x32"
+  },
+  {
+	"asset_id": "afe4392d-13da-4a0c-b788-8b63ad6ec30a",
+	"label": "icon_gear",
+	"file": "art/ui/icon_gear.png",
+	"size": "32x32"
+  },
+  {
+	"asset_id": "48215abd-c25f-4c9d-8170-72f62dd15035",
+	"label": "icon_bell",
+	"file": "art/ui/icon_bell.png",
+	"size": "32x32"
+  },
+  {
+	"asset_id": "0bb7dd64-6b15-4e40-acdc-4b2018759535",
+	"label": "menu_bedroom_bg",
+	"file": "art/backgrounds/menu_bedroom.png",
+	"size": "360x512"
+  },
+  {
+	"asset_id": "",
+	"sha12": "ec023be27c5e",
+	"label": "enemy_mosquito",
+	"file": "art/sprites/enemy_mosquito.png",
+	"size": "48x48"
+  },
+  {
+	"asset_id": "",
+	"sha12": "4d7f3de6a881",
+	"label": "enemy_neighbor",
+	"file": "art/sprites/enemy_neighbor.png",
+	"size": "56x56"
+  },
+  {
+	"asset_id": "",
+	"sha12": "4085548700fb",
+	"label": "enemy_delivery_drone",
+	"file": "art/sprites/enemy_delivery_drone.png",
+	"size": "52x48"
+  },
+  {
+	"asset_id": "",
+	"sha12": "7c8fd41c320c",
+	"label": "boss_espresso_golem",
+	"file": "art/sprites/boss_espresso_golem.png",
+	"size": "96x96"
+  },
+  {
+	"asset_id": "",
+	"sha12": "bcd3ab56e3ed",
+	"label": "boss_dj_rooster",
+	"file": "art/sprites/boss_dj_rooster.png",
+	"size": "96x96"
+  },
+  {
+	"asset_id": "",
+	"sha12": "74bad12f55c8",
+	"label": "boss_thunder_cloud",
+	"file": "art/sprites/boss_thunder_cloud.png",
+	"size": "96x80"
+  },
+  {
+	"asset_id": "",
+	"sha12": "9e69841ef5dc",
+	"label": "bed_cloud",
+	"file": "art/sprites/beds/bed_cloud.png",
+	"size": "128x128"
+  },
+  {
+	"asset_id": "",
+	"sha12": "e6b5251a44a9",
+	"label": "bed_race_car",
+	"file": "art/sprites/beds/bed_race_car.png",
+	"size": "128x128"
+  },
+  {
+	"asset_id": "",
+	"sha12": "9e4963188539",
+	"label": "bed_bunk",
+	"file": "art/sprites/beds/bed_bunk.png",
+	"size": "128x128"
+  },
+  {
+	"asset_id": "",
+	"sha12": "5f4546852e8c",
+	"label": "bed_hammock",
+	"file": "art/sprites/beds/bed_hammock.png",
+	"size": "128x96"
+  },
+  {
+	"asset_id": "",
+	"sha12": "1b15f10e07c7",
+	"label": "bed_waterbed",
+	"file": "art/sprites/beds/bed_waterbed.png",
+	"size": "128x112"
+  },
+  {
+	"asset_id": "",
+	"sha12": "e2d384a7b6da",
+	"label": "bed_canopy",
+	"file": "art/sprites/beds/bed_canopy.png",
+	"size": "128x128"
+  },
+  {
+	"asset_id": "",
+	"sha12": "83f78167efc3",
+	"label": "bed_futon",
+	"file": "art/sprites/beds/bed_futon.png",
+	"size": "128x96"
+  },
+  {
+	"asset_id": "",
+	"sha12": "497261db078f",
+	"label": "dream_bg_underwater",
+	"file": "art/backgrounds/dream_underwater.png",
+	"size": "360x512"
+  },
+  {
+	"asset_id": "",
+	"sha12": "d95b09460c7e",
+	"label": "ui_upgrade_card_frame_attack",
+	"file": "art/ui/upgrade_card_frame_attack.png",
+	"size": "256x140"
+  },
+  {
+	"asset_id": "",
+	"sha12": "9b4fbed7e606",
+	"label": "ui_upgrade_card_frame_comfort",
+	"file": "art/ui/upgrade_card_frame_comfort.png",
+	"size": "256x140"
+  },
+  {
+	"asset_id": "",
+	"sha12": "ff7f0f8e9a8d",
+	"label": "ui_upgrade_card_frame_defense",
+	"file": "art/ui/upgrade_card_frame_defense.png",
+	"size": "256x256"
+  }
+]

@@ -1,0 +1,16 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="FontFile" path="res://art/fonts/PressStart2P-Regular.ttf" id="1_font"]
+
+[resource]
+default_font = ExtResource("1_font")
+default_font_size = 26
+
+Button/colors/font_color = Color(0.94902, 0.95294, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.6549, 0.66275, 0.78039, 1)
+Button/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 0.6)
+Button/font_sizes/font_size = 24
+
+Label/colors/font_color = Color(0.94902, 0.95294, 1, 1)
+Label/font_sizes/font_size = 24

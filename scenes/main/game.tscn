@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://ofs5hai4ot8y"]
+
+[ext_resource type="Script" uid="uid://xkpahvd4jtj7" path="res://scenes/main/game.gd" id="1_game"]
+[ext_resource type="PackedScene" path="res://scenes/player/bed.tscn" id="2_bed"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/floating_joystick.tscn" id="4_joy"]
+[ext_resource type="Script" uid="uid://cdwy3rayn0kl3" path="res://scenes/main/enemy_spawner.gd" id="5_spawner"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="6_pause"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_over_screen.tscn" id="7_gameover"]
+[ext_resource type="PackedScene" path="res://scenes/ui/upgrade_selection.tscn" id="8_upgrade"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewarded_ad_offer.tscn" id="11_reward"]
+[ext_resource type="Script" uid="uid://bwh271cgiunde" path="res://scripts/systems/arena_boundary.gd" id="9_arena"]
+[ext_resource type="Texture2D" uid="uid://rrriysfgq3yn" path="res://art/backgrounds/dream_forest.png" id="10_dream_bg"]
+
+[node name="Game" type="Node2D" unique_id=389951823]
+script = ExtResource("1_game")
+
+[node name="DreamBackground" type="Sprite2D" parent="." unique_id=181328014]
+z_index = -10
+texture = ExtResource("10_dream_bg")
+
+[node name="ArenaBoundary" type="Node2D" parent="." unique_id=2050248985]
+z_index = 5
+script = ExtResource("9_arena")
+
+[node name="World" type="Node2D" parent="." unique_id=375244090]
+
+[node name="Bed" parent="World" unique_id=1824623271 instance=ExtResource("2_bed")]
+position = Vector2(360, 640)
+
+[node name="Entities" type="Node2D" parent="." unique_id=1449906309]
+
+[node name="Pickups" type="Node2D" parent="." unique_id=1369013803]
+
+[node name="Effects" type="Node2D" parent="." unique_id=583360030]
+
+[node name="EnemySpawner" type="Node" parent="." unique_id=682459797]
+script = ExtResource("5_spawner")
+
+[node name="HUD" parent="." unique_id=314231084 instance=ExtResource("3_hud")]
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1949909355]
+layer = 5
+
+[node name="FloatingJoystick" parent="UILayer" unique_id=184833762 instance=ExtResource("4_joy")]
+layout_mode = 3
+
+[node name="AttackButtonRoot" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AttackButton" type="Button" parent="UILayer/AttackButtonRoot"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -188.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+text = ""
+flat = false
+expand_icon = true
+
+[node name="OverlayLayer" type="CanvasLayer" parent="." unique_id=196182354]
+layer = 20
+
+[node name="PauseMenu" parent="OverlayLayer" unique_id=2033795612 instance=ExtResource("6_pause")]
+layout_mode = 3
+offset_left = -2.0
+offset_right = -2.0
+
+[node name="GameOverScreen" parent="OverlayLayer" unique_id=1267361507 instance=ExtResource("7_gameover")]
+layout_mode = 3
+
+[node name="UpgradeSelection" parent="OverlayLayer" unique_id=1573962462 instance=ExtResource("8_upgrade")]
+layout_mode = 3
+
+[node name="RewardedAdOffer" parent="OverlayLayer" instance=ExtResource("11_reward")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0

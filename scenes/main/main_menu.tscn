@@ -1,0 +1,238 @@
+[gd_scene format=3 uid="uid://b5l4iwdhv1joc"]
+
+[ext_resource type="Script" uid="uid://12vuth01s3br" path="res://scenes/main/main_menu.gd" id="1_menu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/store_screen.tscn" id="2_store"]
+[ext_resource type="Texture2D" uid="uid://y3eriqpkrw81" path="res://art/sprites/bed_standard.png" id="3_bed"]
+[ext_resource type="FontFile" uid="uid://c1t27bsi4ypli" path="res://art/fonts/PressStart2P-Regular.ttf" id="3_hiibk"]
+[ext_resource type="Texture2D" uid="uid://cyxon1ye2kd8j" path="res://art/backgrounds/menu_bedroom.png" id="4_menu_bg"]
+[ext_resource type="Texture2D" uid="uid://cryu1r1mfu22p" path="res://art/backgrounds/dream_clouds.png" id="5_clouds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play_btn"]
+content_margin_left = 80.0
+content_margin_top = 28.0
+content_margin_right = 80.0
+content_margin_bottom = 28.0
+bg_color = Color(0.3, 0.35, 0.7, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0.15, 0.15, 0.4, 0.4)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_play_pressed"]
+content_margin_left = 80.0
+content_margin_top = 28.0
+content_margin_right = 80.0
+content_margin_bottom = 28.0
+bg_color = Color(0.25, 0.3, 0.6, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_store_btn"]
+content_margin_left = 60.0
+content_margin_top = 22.0
+content_margin_right = 60.0
+content_margin_bottom = 22.0
+bg_color = Color(0.22, 0.22, 0.36, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MainMenu" type="Control" unique_id=512359674]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1819584816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_menu_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CloudsBG" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+clip_contents = true
+
+[node name="CloudTex" type="TextureRect" parent="CloudsBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_right = 120.0
+offset_top = -80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_clouds")
+expand_mode = 1
+stretch_mode = 6
+modulate = Color(1, 1, 1, 0.38)
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1436915139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.04, 0.1, 0.5)
+
+[node name="ShardsDisplay" type="Label" parent="." unique_id=581533895]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 30.0
+offset_top = 50.0
+offset_right = -30.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+text = "0 Shards"
+horizontal_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=996744421]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=725942656]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1811441424]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.93, 1, 1)
+theme_override_fonts/font = ExtResource("3_hiibk")
+theme_override_font_sizes/font_size = 48
+text = "Five More
+Minutes!"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/VBoxContainer" unique_id=103285514]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.85, 0.9)
+theme_override_font_sizes/font_size = 16
+text = "Protect your sleep at all costs."
+horizontal_alignment = 1
+
+[node name="BedImage" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=216416126]
+custom_minimum_size = Vector2(280, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_bed")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=543243673]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1315501196]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_play_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_play_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_play_btn")
+text = "Tap to Sleep!"
+
+[node name="StoreButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=71011716]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.95, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_store_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_store_btn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_store_btn")
+text = "Store"
+
+[node name="CreditLabel" type="Label" parent="." unique_id=1156118819]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.8)
+theme_override_font_sizes/font_size = 20
+text = "made by kw.hades"
+horizontal_alignment = 1
+
+[node name="AudioToggles" type="HBoxContainer" parent="." unique_id=2001001]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 120.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="MusicLabel" type="Label" parent="AudioToggles" unique_id=2001000]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
+text = "Music"
+vertical_alignment = 1
+
+[node name="MusicToggle" type="Button" parent="AudioToggles" unique_id=2001002]
+custom_minimum_size = Vector2(150, 68)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+toggle_mode = true
+text = "ON"
+button_pressed = true
+flat = false
+
+[node name="SfxLabel" type="Label" parent="AudioToggles" unique_id=2001004]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
+text = "SFX"
+vertical_alignment = 1
+
+[node name="SfxToggle" type="Button" parent="AudioToggles" unique_id=2001003]
+custom_minimum_size = Vector2(150, 68)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+toggle_mode = true
+text = "ON"
+button_pressed = true
+flat = false
+
+[node name="StoreScreen" parent="." unique_id=269482877 instance=ExtResource("2_store")]
+visible = false

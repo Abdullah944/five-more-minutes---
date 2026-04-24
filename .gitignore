@@ -1,0 +1,22 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+android/
+
+# Secrets
+.env
+*.env
+export_credentials.cfg
+
+# MCP configs (contain API keys)
+.cursor/mcp.json
+.vscode/mcp.json
+
+# OS / editor cruft
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*~
+*.pyc
+__pycache__/
+**/__pycache__/
