@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b57d0" />
+  <title>Privacy Policy — Five More Minutes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1a1c20;
+      --muted: #5f6470;
+      --border: #e6e8ee;
+      --accent: #0b57d0;
+      --accent-soft: #e8f0fe;
+      --radius: 14px;
+      --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px rgba(16, 24, 40, 0.06);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --card: #161a21;
+        --text: #e8eaef;
+        --muted: #a0a6b3;
+        --border: #232833;
+        --accent: #7aa7ff;
+        --accent-soft: #1b2740;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji";
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: clamp(16px, 4vw, 40px) clamp(14px, 4vw, 32px) 64px;
+    }
+
+    header.hero {
+      text-align: left;
+      padding: 28px 0 8px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 2.4vw + 1rem, 2.25rem);
+      line-height: 1.2;
+      margin: 14px 0 8px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .last-updated {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 4px 0 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 3vw, 32px);
+      margin-top: 22px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 28px 0 8px;
+      letter-spacing: -0.005em;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    p { margin: 8px 0; }
+
+    ul {
+      padding-left: 1.15rem;
+      margin: 8px 0 12px;
+    }
+
+    li { margin: 6px 0; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+    a:hover, a:focus-visible {
+      border-bottom-color: currentColor;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 14px 0 6px;
+    }
+    .callout strong { color: var(--accent); }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+
+    .meta span strong { color: var(--text); font-weight: 600; }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    footer .email {
+      display: inline-block;
+      margin-top: 4px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.08rem; }
+      body { font-size: 15.5px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <span class="eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="last-updated"><strong>Last Updated:</strong> 11 May 2026</p>
+      <div class="meta">
+        <span><strong>App:</strong> Five More Minutes</span>
+        <span><strong>Package:</strong> com.kwhades.fiveMin</span>
+        <span><strong>Platform:</strong> Android</span>
+      </div>
+    </header>
+
+    <section class="card" aria-labelledby="intro">
+      <h2 id="intro">1. Introduction</h2>
+      <p>
+        Welcome to <strong>Five More Minutes</strong> (the “App”). This Privacy Policy
+        explains what information the App collects, how it is used, and the rights you
+        have over that information. By downloading or using the App, you agree to the
+        practices described here. If you do not agree, please do not use the App.
+      </p>
+
+      <h2 id="data">2. Data We Collect</h2>
+      <p>We aim to collect as little data as possible. The information the App may process includes:</p>
+      <ul>
+        <li>
+          <strong>Device Information:</strong> non-identifying device data such as device
+          model, operating system version, language, screen size, and a resettable
+          advertising identifier provided by your device.
+        </li>
+        <li>
+          <strong>Usage Data:</strong> basic information about how the App is used, such
+          as session length, crash and stability diagnostics, and feature interactions
+          used to improve the App.
+        </li>
+        <li>
+          <strong>Game Progress:</strong> gameplay progress and settings stored locally
+          on your device.
+        </li>
+      </ul>
+      <p>
+        The App does <strong>not</strong> ask for your name, address, phone number,
+        precise location, contacts, photos, microphone, or camera.
+      </p>
+
+      <h2 id="third-party">3. Third-Party Services</h2>
+      <p>
+        The App relies on the following third-party services. Each provider has its own
+        privacy policy describing how it handles data:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Play Services</strong> — required by Android for app delivery,
+          updates, and security.
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>Google AdMob</strong> — used to display advertising, including rewarded
+          ads and banners. AdMob may use a device advertising identifier to deliver and
+          measure ads.
+          <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">How AdMob uses data</a>.
+        </li>
+      </ul>
+      <p>
+        Where required by law, the App displays a consent prompt before ads that use
+        personalized data are shown.
+      </p>
+
+      <h2 id="children">4. Children’s Privacy</h2>
+      <div class="callout">
+        <strong>Important:</strong> This App is directed to a general audience that
+        includes children, and we treat all child users with extra care. We comply with
+        the <strong>Children’s Online Privacy Protection Act (COPPA)</strong> in the
+        United States and <strong>Article 8 of the EU General Data Protection
+        Regulation (GDPR-K)</strong> in the European Economic Area for users under the
+        age of 13 (or the applicable age of digital consent in your country).
+      </div>
+      <p>For users we know or reasonably believe to be under 13, the App:</p>
+      <ul>
+        <li>Does <strong>not</strong> knowingly collect personal information.</li>
+        <li>Does <strong>not</strong> show personalized (interest-based) advertising; only non-personalized ads are served, as supported by Google AdMob and Google Play Families policies.</li>
+        <li>Does <strong>not</strong> use cross-app tracking identifiers for advertising.</li>
+        <li>Does <strong>not</strong> include social features, chat, user-generated content uploads, or external links that are not clearly labeled.</li>
+        <li>Limits third-party SDKs to those certified as compliant with Google Play’s Families policy and applicable child-safety standards.</li>
+      </ul>
+      <p>
+        If you are a parent or guardian and believe your child has provided us with
+        information, please contact us at the email below and we will promptly delete
+        that information and any associated account data.
+      </p>
+
+      <h2 id="rights">5. Your Rights</h2>
+      <p>Depending on where you live, you may have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> the information we hold about you.</li>
+        <li><strong>Correct</strong> information that is inaccurate or incomplete.</li>
+        <li><strong>Delete</strong> your information (“right to be forgotten”).</li>
+        <li><strong>Object to</strong> or <strong>restrict</strong> certain processing.</li>
+        <li><strong>Withdraw consent</strong> at any time, where processing is based on consent.</li>
+        <li><strong>Opt out of personalized ads</strong> via your device’s Google settings (Settings → Google → Ads → “Delete advertising ID” or “Opt out of Ads Personalization”).</li>
+      </ul>
+      <p>
+        To exercise any of these rights, contact us using the email below. We will
+        respond within a reasonable time frame and in accordance with applicable law
+        (GDPR, CCPA, COPPA, etc.).
+      </p>
+
+      <h2 id="security">6. Data Security &amp; Retention</h2>
+      <p>
+        We use reasonable technical and organizational measures to protect data
+        processed by the App. Local game data remains on your device until you clear
+        the App’s storage or uninstall it. Advertising and diagnostic data handled by
+        Google is retained according to Google’s own policies.
+      </p>
+
+      <h2 id="changes">7. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. When we do, we will revise
+        the “Last Updated” date at the top of this page. Significant changes will be
+        communicated through the App or the store listing where appropriate.
+      </p>
+
+      <h2 id="contact">8. Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy or your data, please
+        contact us at:
+      </p>
+      <p>
+        <a class="email" href="mailto:hadesinhaven@gmail.com">hadesinhaven@gmail.com</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2026 Five More Minutes. All rights reserved.</p>
+      <p>Contact: <a class="email" href="mailto:hadesinhaven@gmail.com">hadesinhaven@gmail.com</a></p>
+    </footer>
+  </main>
+</body>
+</html>
